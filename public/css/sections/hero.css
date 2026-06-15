@@ -10,6 +10,13 @@
     justify-content: space-between;
     gap: 40px;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero-logo-big,
+.hero-content {
+    min-width: 0;
 }
 
 .hero-video-bg {

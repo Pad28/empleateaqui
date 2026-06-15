@@ -3,6 +3,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     background-color: transparent;
     z-index: 1000;
     padding: 20px 5%;
@@ -11,6 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: var(--header-height);
+    overflow: hidden;
 }
 
 .nav-logo {
@@ -19,7 +21,8 @@ header {
     align-items: center;
     position: relative;
     z-index: 1001;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .nav-logo a {

@@ -1,5 +1,10 @@
 /* ── Tablet landscape / small laptop ── */
 @media (max-width: 1200px) {
+    #line-left,
+    #line-right {
+        display: none;
+    }
+
     .badge-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -10,6 +15,11 @@
 
     .mirror-center-text-block {
         font-size: 1.15rem;
+        min-width: 0;
+    }
+
+    .advantages-mirror-box {
+        min-width: 0;
     }
 
     .services-title-side h2 {
@@ -253,6 +263,13 @@
     .mirror-center-text-block {
         font-size: 1.05rem;
         gap: 18px;
+        min-width: 0;
+    }
+
+    .metric-num,
+    .metric-num--compact {
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .metrics-container {
@@ -307,19 +324,20 @@
         width: 100%;
         max-width: 300px;
         margin: 10px auto 0;
-        overflow: visible;
+        overflow: hidden;
     }
 
     .avatar-box-ea__watermark {
         width: 100%;
+        max-width: 100%;
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     .avatar-box-ea__avatar {
-        width: 220px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 220px;
         left: 50% !important;
         transform: translateX(-50%);
         bottom: 0;
@@ -417,6 +435,14 @@
     .how-section h2,
     .advantages-section h2 {
         font-size: 1.6rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .hero-content h2,
+    .contact-info-side h2 {
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .banner-white-box {

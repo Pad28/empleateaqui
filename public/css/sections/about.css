@@ -2,6 +2,7 @@
     padding: var(--section-padding) 0;
     text-align: center;
     background-color: var(--color-white);
+    overflow-x: hidden;
 }
 
 .about-section h2 {

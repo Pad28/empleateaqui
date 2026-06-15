@@ -5,6 +5,9 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .footer-top-row-grid {

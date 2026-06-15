@@ -5,6 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .banner-white-box {

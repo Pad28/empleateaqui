@@ -3,6 +3,9 @@
         url('../../assets/images/backgrounds/worker-protesting.jpg') no-repeat center center/cover;
     padding: var(--section-padding) 10% 60px;
     color: var(--color-white);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .clients-white-card {
@@ -33,6 +36,12 @@
     gap: 50px;
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
+}
+
+.contact-info-side,
+.contact-form-side {
+    min-width: 0;
 }
 
 .contact-info-side {
@@ -54,12 +63,14 @@
     max-width: 450px;
     height: 520px;
     margin-top: 40px;
+    overflow: hidden;
 }
 
 .avatar-box-ea__watermark {
     position: absolute;
     z-index: 1;
-    width: 130%;
+    width: 100%;
+    max-width: 100%;
     left: 50%;
     top: 45%;
     transform: translate(-50%, -50%);
@@ -67,12 +78,25 @@
 }
 
 .avatar-box-ea__avatar {
-    width: 550px;
+    width: 100%;
+    max-width: 550px;
     position: absolute;
     bottom: -16.9%;
-    left: 43%;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+}
+
+@media (min-width: 901px) {
+    .avatar-box-ea__watermark {
+        width: 130%;
+    }
+
+    .avatar-box-ea__avatar {
+        width: 550px;
+        max-width: none;
+        left: 43%;
+    }
 }
 
 .contact-form-side {
