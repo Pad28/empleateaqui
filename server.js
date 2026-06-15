@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 
-const { isValidEmail, getMailConfig, sendContactEmails } = require('./services/email');
+const { validateContactData, getMailConfig, sendContactEmails } = require('./services/email');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -28,10 +28,10 @@ app.get('/api/health', (req, res) => {
 });
 
 app.post('/api/contact', async (req, res, next) => {
-  const { email } = req.body;
+  const validation = validateContactData(req.body);
 
-  if (!isValidEmail(email)) {
-    return res.status(400).json({ error: 'Introduce un correo electrónico válido.' });
+  if (!validation.valid) {
+    return res.status(400).json({ error: validation.error });
   }
 
   if (!getMailConfig()) {
@@ -39,7 +39,7 @@ app.post('/api/contact', async (req, res, next) => {
   }
 
   try {
-    await sendContactEmails(email);
+    await sendContactEmails(validation.data);
     res.status(201).json({ message: 'Gracias. Nos pondremos en contacto contigo pronto.' });
   } catch (err) {
     if (err.message === 'MAIL_NOT_CONFIGURED') {

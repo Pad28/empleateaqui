@@ -235,27 +235,27 @@
                     <form id="subscribe-form" novalidate>
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" class="form-control" required>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required maxlength="200" autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="empresa">Empresa</label>
-                            <input type="text" id="empresa" class="form-control" required>
+                            <input type="text" id="empresa" name="empresa" class="form-control" required maxlength="200" autocomplete="organization">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" class="form-control" required autocomplete="email">
+                            <input type="email" id="email" name="email" class="form-control" required maxlength="200" autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="telefono">Número Telefónico (WhatsApp)</label>
-                            <input type="tel" id="telefono" class="form-control" required>
+                            <input type="tel" id="telefono" name="telefono" class="form-control" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Ej. 442 123 4567">
                         </div>
                         <div class="form-group">
                             <label for="perfil">Tipo de Perfil que Necesitas</label>
-                            <input type="text" id="perfil" class="form-control" required>
+                            <input type="text" id="perfil" name="perfil" class="form-control" required maxlength="200">
                         </div>
                         <div class="form-group">
                             <label for="urgencia">Urgencia del Proceso</label>
-                            <input type="text" id="urgencia" class="form-control" required>
+                            <input type="text" id="urgencia" name="urgencia" class="form-control" required maxlength="200" placeholder="Ej. Inmediata, 2 semanas">
                         </div>
 
                         <button type="submit" class="btn-submit-bloom" id="submit-btn">

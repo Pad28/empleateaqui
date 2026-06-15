@@ -11,48 +11,69 @@
     });
 
     const form = document.getElementById('subscribe-form');
-    if (form) {
-        const emailInput = document.getElementById('email');
-        const submitBtn = document.getElementById('submit-btn');
-        const formStatus = document.getElementById('form-status');
+    if (!form) return;
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    const fieldIds = ['nombre', 'empresa', 'email', 'telefono', 'perfil', 'urgencia'];
 
-            const email = emailInput.value.trim();
-            if (!email) return;
-
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span>Enviando...</span>';
-            formStatus.textContent = '';
-            formStatus.className = 'form-status';
-
-            const isLocalFile = window.location.protocol === 'file:';
-            const apiUrl = isLocalFile ? 'http://localhost:5555/api/contact' : '/api/contact';
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.error || 'No pudimos procesar tu registro.');
-                }
-
-                formStatus.textContent = '¡Gracias! Nuestro equipo se pondrá en contacto contigo pronto.';
-                formStatus.className = 'form-status form-status--success';
-                form.reset();
-            } catch (error) {
-                formStatus.textContent = error.message;
-                formStatus.className = 'form-status form-status--error';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span>Enviar</span>';
-            }
-        });
+    function getContactPayload() {
+        return fieldIds.reduce((payload, id) => {
+            const input = document.getElementById(id);
+            payload[id] = input ? input.value.trim() : '';
+            return payload;
+        }, {});
     }
+
+    function getApiUrl() {
+        if (window.location.protocol === 'file:') {
+            return 'http://localhost:5555/api/contact';
+        }
+        return '/api/contact';
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const payload = getContactPayload();
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Enviando...</span>';
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+
+        try {
+            const response = await fetch(getApiUrl(), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            let data = {};
+            try {
+                data = await response.json();
+            } catch (_) {
+                throw new Error('No pudimos procesar tu solicitud. Inténtalo más tarde.');
+            }
+
+            if (!response.ok) {
+                throw new Error(data.error || 'No pudimos procesar tu solicitud.');
+            }
+
+            formStatus.textContent = data.message || '¡Gracias! Nuestro equipo se pondrá en contacto contigo pronto.';
+            formStatus.className = 'form-status form-status--success';
+            form.reset();
+        } catch (error) {
+            formStatus.textContent = error.message;
+            formStatus.className = 'form-status form-status--error';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Enviar</span>';
+        }
+    });
 })();
