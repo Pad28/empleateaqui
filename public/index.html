@@ -1,1619 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empléate Aquí - Reclutamiento Digital de Talento</title>
+    <meta name="description" content="Reclutamiento digital de talento. Tu aliado estratégico para cubrir vacantes con procesos ágiles, humanos e innovadores.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-
-        @property --p {
-            syntax: '<percentage>';
-            inherits: false;
-            initial-value: 0%;
-        }
-        @property --t {
-            syntax: '<time>';
-            inherits: false;
-            initial-value: 0s;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Bai Jamjuree', sans-serif; 
-            background-color: #ffffff;
-            color: #333333;
-            line-height: 1.6;
-            overflow-x: hidden; 
-        }
-
-        header {
-            position: absolute; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: transparent;
-            backdrop-filter: none;          
-            z-index: 1000;
-            padding: 20px 5%;             
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: none;             
-            height: 110px; 
-        }
-
-        .nav-logo {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .nav-logo img {
-            height: 200%;
-            width: auto;
-            max-width: 220px;
-            display: block;
-            object-fit: contain;
-        }
-
-        .nav-logo-right {
-            height: 65px;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-logo-right img {
-            height: 200%;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.2s;
-        }
-
-        nav ul li a:hover {
-            opacity: 0.8;
-        }
-
-        .hero-section {
-            position: relative; 
-            min-height: 100vh;
-            padding: 140px 8% 60px 8%;
-            background-color: #5a39fa; 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            overflow: hidden;
-        }
-
-        .hero-video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            transform: translate(-50%, -50%);
-            z-index: 1; 
-            pointer-events: none; 
-        }
-
-        .hero-overlay-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(90, 57, 250, 0.88), rgba(57, 86, 250, 0.88)); 
-            z-index: 2; 
-            pointer-events: none;
-        }
-
-        .hero-logo-big {
-            flex: 1;
-            max-width: 380px;
-            position: relative;
-            z-index: 3; 
-        }
-
-        .hero-logo-big img {
-            width: 100%;
-            height: auto;
-        }
-
-        .hero-content {
-            flex: 1.2;
-            color: #ffffff;
-            text-align: left;
-            max-width: 580px; 
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; 
-            position: relative;
-            z-index: 3; 
-        }
-
-        .hero-content h2 {
-            font-size: 3.2rem; 
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: #ffffff !important; 
-        }
-
-        .hero-content p.hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.4;
-            margin-bottom: 35px;
-            opacity: 1;
-            color: #ffffff;
-            max-width: 420px;
-        }
-
-        .btn-liquid {
-            position: relative;
-            padding: 14px 35px;
-            font-family: 'Bai Jamjuree', sans-serif; 
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 30px;
-            cursor: pointer;
-            overflow: hidden;
-            display: inline-block;
-            text-decoration: none;
-            border: 2px solid #5a39fa; 
-            background: none;
-            color: #5a39fa;
-            box-shadow: 0 4px 15px rgba(90, 57, 250, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .btn-liquid span {
-            position: relative;
-            z-index: 5;
-        }
-
-        .liquid-fill {
-            background: linear-gradient(135deg, #5a39fa 0%, #3956fa 100%) no-repeat
-                calc(200% - var(--p, 0%))
-                100% / 200% var(--p, 0.2em);
-            transition: 0.3s var(--t, 0s),
-                background-position 0.3s calc(0.3s - var(--t, 0s));
-        }
-
-        .liquid-fill:hover {
-            --p: 100%;
-            --t: 0.3s;
-            color: #ffffff;
-            border-color: #3956fa;
-            box-shadow: 0 6px 20px rgba(57, 86, 250, 0.3);
-        }
-
-        .btn-hero-white {
-            position: relative;
-            padding: 14px 32px;
-            font-family: 'Bai Jamjuree', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: 8px !important; 
-            cursor: pointer;
-            overflow: hidden;
-            display: inline-block;
-            text-decoration: none;
-            border: none !important; 
-            background: #ffffff !important; 
-            color: #5a39fa !important; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .btn-hero-white span {
-            position: relative;
-            z-index: 5;
-        }
-
-        .btn-hero-white:hover {
-            background: #f4f2ff !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-liquid::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0px;
-            height: 0px;
-            background-color: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            z-index: 4;
-        }
-
-        .btn-liquid.bloom-active::after {
-            animation: ripple-bloom 0.45s ease-out;
-        }
-
-        @keyframes ripple-bloom {
-            0% {
-                width: 0px;
-                height: 0px;
-                opacity: 1;
-            }
-            100% {
-                width: 350px;
-                height: 350px;
-                opacity: 0;
-            }
-        }
-
-        .btn-liquid:active {
-            transform: scale(0.96);
-            transition: transform 0.1s ease;
-        }
-
-        .about-section {
-            padding: 80px 0; 
-            text-align: center;
-            background-color: #ffffff;
-        }
-
-        .section-title-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin-bottom: 40px;
-            height: 60px; 
-        }
-
-        .about-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            white-space: nowrap;
-            background-color: #ffffff;
-            padding: 0 30px;
-            z-index: 10;
-        }
-
-        .title-line {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 38px; 
-            background-color: #5a39fa;
-            width: 50vw; 
-            z-index: 5;
-        }
-
-        #line-left {
-            right: 50%;
-            margin-right: 350px;
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-top-right-radius: 20px ; 
-            border-bottom-right-radius: 20px ;
-            transform-origin: left center;
-            animation: arrive-from-left 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-
-        #line-right {
-            left: 50%;
-            margin-left: 350px;
-            border-top-left-radius: 20px ; 
-            border-bottom-left-radius: 20px ;
-            border-top-right-radius: 0px ;
-            border-bottom-right-radius: 0px ;
-            transform-origin: right center;
-            animation: arrive-from-right 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-
-        @keyframes arrive-from-left {
-            0% {
-                transform: translateY(-50%) scaleX(0);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(-50%) scaleX(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes arrive-from-right {
-            0% {
-                transform: translateY(-50%) scaleX(0);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(-50%) scaleX(1);
-                opacity: 1;
-            }
-        }
-
-        .about-text {
-            max-width: 950px;
-            margin: 0 auto 50px auto;
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #111111;
-            line-height: 1.8;
-            text-transform: none;
-            padding: 0 5%;
-        }
-
-        .about-text strong {
-            font-weight: 800;
-        }
-
-        .divider-purple {
-            width: 85%;
-            height: 3px;
-            background-color: #5a39fa;
-            margin: 0 auto 40px auto;
-        }
-
-        .commitment-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .commitment-desc {
-            font-size: 1.05rem;
-            font-weight: 500;
-            max-width: 520px; 
-            margin: 0 auto 60px auto;
-            color: #222222;
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        .pillars-upper-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px; 
-            max-width: 950px; 
-            margin: 0 auto 50px auto;
-        }
-
-        .pillar-side-box {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .commitment-title,
-        .pillar-side-box h4,
-        .pillar-bottom-row h4 {
-            font-size: 1.6rem; 
-            font-weight: 800; 
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #000000;
-            letter-spacing: 0.5px;
-            text-align: center;
-        }
-
-        .pillar-side-box p {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #222222;
-            line-height: 1.5;
-            max-width: 290px; 
-            text-align: center;
-        }
-
-        .pillar-center-logo {
-            flex: 0 0 160px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pillar-center-logo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .pillar-bottom-row {
-            max-width: 550px; 
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        .pillar-bottom-row p {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #222222;
-            line-height: 1.5;
-            text-align: center;
-        }
-        
-        .how-section {
-            padding: 80px 10%;
-            background-color: #fdfdfd;
-            text-align: center;
-        }
-
-        .how-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto 50px auto;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #5a39fa, #3956fa);
-            color: #ffffff;
-            padding: 40px 35px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(90, 57, 250, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .card-img-holder {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 5px;
-        }
-
-        .card-img-holder img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card h3 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 1.3;
-            min-height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: left;
-        }
-
-        .card p {
-            font-size: 0.85rem;
-            font-weight: 500;
-            line-height: 1.7;
-            text-align: left;
-        }
-
-        .btn-square-liquid {
-            border-radius: 8px;
-            padding: 14px 30px;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        .banner-middle {
-            padding: 120px 5%;
-            background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
-                        url('factory-workers-walking-through-large-production-hall.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .banner-white-box {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 55px 6%;
-            border-radius: 50px;
-            max-width: 700px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .banner-white-box h3 {
-            color: #5a39fa;
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            line-height: 1.3;
-            justify-content: flex-start;
-            text-align: left;
-        }
-
-        .banner-white-box p {
-            color: #5a39fa;
-            font-size: 0.9rem;
-            font-weight: 500;
-            line-height: 1.7;
-            margin-bottom: 35px;
-            text-align: left;
-        }
-
-        .banner-white-box p strong {
-            color: #5a39fa;
-            font-weight: 700;
-        }
-
-        .services-section {
-            background: linear-gradient(rgba(90, 57, 250, 0.85), rgba(57, 86, 250, 0.85)), 
-                        url('man-safety-equipment-his-workplace.jpg') no-repeat center center/cover; 
-            padding: 90px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            position: relative;
-        }
-
-        .services-title-side {
-            flex: 1;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end; 
-            height: 160px;
-            max-width: 480px; 
-            margin-right: 40px; 
-        }
-
-        .services-title-side h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #ffffff;
-            position: relative;
-            z-index: 5;
-            letter-spacing: -1px; 
-            text-align: right; 
-        }
-
-        .services-bg-isotipo {
-            position: absolute;
-            left: 70%; 
-            top: 50%;
-            transform: translate(-50%, -50%); 
-            width: 280px; 
-            height: auto;
-            opacity: 0.15; 
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .services-bg-isotipo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .services-card-white {
-            flex: 1;
-            background-color: #ffffff;
-            border-radius: 40px;
-            padding: 45px;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 5;
-        }
-
-        .services-card-white h4 {
-            color: #5a39fa;
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .services-card-white h4 strong {
-            font-size: 1.1rem;
-            font-weight: 800;
-        }
-
-        .services-card-white p {
-            font-size: 0.82rem;
-            color: #555555;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .services-card-white p strong {
-            color: #5a39fa;
-            font-weight: 700;
-        }
-
-        .small-logo-box {
-            width: 130px;
-            margin: 0 auto;
-        }
-
-        .small-logo-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .advantages-section {
-            padding: 80px 0; 
-            text-align: center;
-            background-color: #ffffff;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .advantages-section h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #5a39fa;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .badge-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto 40px auto;
-            padding: 0 20px; 
-        }
-
-        .badge-item {
-            background-color: #ffffff;
-            padding: 25px 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.425);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: #333333;
-            line-height: 1.5;
-        }
-
-        .badge-divider-line {
-            width: 100%; 
-            height: 2px;
-            background-color: #5a39fa;
-            margin: 0 auto 50px auto;
-            opacity: 0.8;
-        }
-
-        .advantages-mirror-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; 
-            width: 100%;
-            gap: 20px;
-            padding: 0; 
-            margin-bottom: 90px; 
-        }
-
-        .mirror-side-graphic {
-            flex: 0 0 290px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.45; 
-        }
-
-        .mirror-side-graphic img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .mirror-center-text-block {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            text-align: center; 
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #222222;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .mirror-center-text-block p {
-            line-height: 1.6;
-        }
-
-        .mirror-center-text-block strong {
-            font-weight: 800;
-            color: #000000;
-        }
-
-        .metrics-container {
-            max-width: 400px;
-            margin: 90px auto 0 auto; 
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-            padding: 0 20px;
-        }
-
-        .metric-block {
-            border-bottom: 2px solid rgba(90, 57, 250, 0.2);
-            padding-bottom: 20px;
-        }
-
-        .metrics-block:last-child {
-            border: none;
-        }
-
-        .metric-num {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #333333;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .metric-label {
-            font-size: 1.5rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #000000;
-        }
-
-        .metric-label-cobertura {
-            font-size: 0.85rem;
-            color: #555555;
-            font-weight: 700;
-            margin-top: 5px; 
-            line-height: 1.4;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        .contact-section {
-            background: linear-gradient(rgba(90, 57, 250, 0.88), rgba(57, 86, 250, 0.88)), 
-                        url('worker-protesting-working-rights.jpg') no-repeat center center/cover; 
-            padding: 80px 10% 60px 10%;
-            color: #ffffff;
-        }
-
-        .clients-white-card {
-            background-color: #ffffff;
-            border-radius: 40px;
-            /* Relleno izquierdo calibrado al Figma corporativo */
-            padding: 60px 60px 60px 35px; 
-            max-width: 900px;
-            margin: 0 auto 80px auto;
-            min-height: 400px;
-            text-align: left;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center; 
-        }
-
-        .clients-white-card h3 {
-            color: #5a39fa;
-            font-size: 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin-left: 0; 
-        }
-
-        .contact-wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 50px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-info-side {
-            flex: 1;
-            text-align: left;
-        }
-
-        .contact-info-side h2 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            line-height: 1;
-        }
-
-        .avatar-box-ea {
-            position: relative;
-            width: 100%;
-            max-width: 450px; 
-            height: 520px;    
-            margin-top: 40px;
-        }
-
-        .avatar-box-ea img[alt="Reclutamiento EA"] {
-            position: absolute;
-            z-index: 1;
-            width: 130%; 
-            left: 50%;
-            top: 45%;
-            transform: translate(-50%, -50%);
-            opacity: 0.2;
-        }
-
-        .avatar-box-ea img[alt="Representante RH"] {
-            width: 550px; 
-            height: auto;
-            position: absolute;
-            bottom: -16.9%;
-            left: 43%;
-            transform: translateX(-50%); 
-            z-index: 2;
-        }
-
-        .contact-form-side {
-            flex: 1.2;
-            width: 100%;
-            text-align: left;
-        }
-
-        .form-headline {
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .form-control {
-            width: 100%;
-            background-color: #ffffff;
-            border: none;
-            outline: none;
-            border-radius: 25px;
-            padding: 12px 20px;
-            font-family: 'Bai Jamjuree', sans-serif; 
-            font-size: 0.9rem;
-            color: #333333;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .btn-submit-bloom {
-            width: 100%;
-            background: linear-gradient(135deg, #5a39fa, #3956fa);
-            color: #ffffff;
-            border: none;
-            outline: none;
-            padding: 14px;
-            border-radius: 25px;
-            font-family: 'Bai Jamjuree', sans-serif; 
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(90, 57, 250, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-submit-bloom span {
-            position: relative;
-            z-index: 5;
-        }
-
-        .btn-submit-bloom::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0px;
-            height: 0px;
-            background-color: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            z-index: 4;
-        }
-
-        .btn-submit-bloom.bloom-active::after {
-            animation: ripple-bloom 0.45s ease-out;
-        }
-
-        .btn-submit-bloom:active {
-            transform: scale(0.97);
-        }
-
-        footer {
-            background-color: #e5e5e5;
-            color: #333333;
-            padding: 50px 8% 40px 8%;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .footer-top-row-grid {
-            display: flex;
-            align-items: flex-start; 
-            justify-content: flex-start;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-col-redes-heading {
-            padding-right: 35px;
-            border-right: 2px solid rgba(0, 0, 0, 0.15); 
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            text-align: left;
-        }
-
-        .footer-col-redes-heading h5 {
-            font-size: 1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #000000;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-
-        .footer-redes-vertical-words-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-redes-vertical-words-list li {
-            color: #333333;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: capitalize;
-        }
-
-        .footer-menu-horizontal-list {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding-left: 35px;
-            margin-top: 2px;
-        }
-
-        .footer-menu-horizontal-list li a {
-            color: #000000;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.2s;
-        }
-
-        .footer-menu-horizontal-list li a:hover {
-            color: #5a39fa;
-        }
-
-        .footer-middle-content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 25px;
-        }
-
-        .footer-left-legals-block {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            text-align: left;
-        }
-
-        .footer-left-legals-block .legal-link {
-            color: #333333;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .footer-left-legals-block .legal-link:hover {
-            color: #5a39fa;
-        }
-
-        .footer-address-block {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #333333;
-            line-height: 1.5;
-            max-width: 420px;
-            margin-top: 10px;
-        }
-
-        .footer-address-icon {
-            width: 20px;
-            height: auto;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .footer-logo-box-right {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .footer-logo-box-right img {
-            width: 190px; 
-            height: auto;
-            display: block;
-        }
-
-        .footer-bottom-closing-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 20px;
-        }
-
-        .footer-slogan-text {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #333333;
-        }
-
-        .footer-social-icons-row {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-social-icons-row a {
-            display: block;
-            width: 38px;
-            height: 38px;
-            transition: transform 0.2s;
-        }
-
-        .footer-social-icons-row a:hover {
-            transform: scale(1.15);
-        }
-
-        .footer-social-icons-row img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 70px;
-            height: 70px;
-            z-index: 999;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 900px) {
-            header { padding: 15px 4%; }
-            nav { display: none; }
-            
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 100px;
-                padding-left: 5%;
-                padding-right: 5%;
-                min-height: auto;
-                gap: 20px;
-                overflow-x: hidden;
-            }
-
-            .hero-logo-big {
-                max-width: 260px; 
-                margin: 0 auto;
-            }
-
-            .hero-content {
-                text-align: center;
-                max-width: 100%;
-            }
-
-            .hero-content h2 {
-                font-size: 1.6rem; 
-            }
-
-            #line-left, #line-right {
-                display: none ; 
-            }
-            .section-title-container {
-                height: auto;
-            }
-            .about-section h2 {
-                font-size: 1.8rem ;
-                white-space: normal;
-                padding: 0;
-            }
-
-            .commitment-title,
-            .pillar-side-box h4,
-            .pillar-bottom-row h4 {
-                font-size: 1.4rem ; 
-                font-weight: 800 ;
-                text-transform: uppercase ;
-                margin-bottom: 15px ;
-            }
-            
-            .pillars-upper-row {
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            .pillar-side-box {
-                max-width: 100%;
-            }
-
-            .pillar-center-logo {
-                max-width: 130px;
-                margin: 0 auto;
-            }
-
-            .cards-container, .badge-grid, .contact-wrap {
-                grid-template-columns: 1fr;
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .advantages-mirror-box {
-                flex-direction: column;
-                gap: 30px;
-                padding: 0 20px;
-            }
-
-            .mirror-side-graphic {
-                max-width: 160px;
-            }
-            
-            .services-section {
-                flex-direction: column;
-            }
-
-            .services-title-side {
-                height: auto;
-                justify-content: center;
-                margin-right: 0;
-                max-width: 100%;
-            }
-            .services-title-side h2 {
-                text-align: center;
-            }
-            .services-bg-isotipo {
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            .contact-wrap {
-                display: flex;
-                flex-direction: column-reverse; 
-                gap: 10px;
-            }
-            .contact-info-side h2 {
-                font-size: 2rem;
-                text-align: center;
-                margin-bottom: 5px;
-            }
-            .avatar-box-ea {
-                height: 340px ; 
-                width: 100% ;
-                max-width: 340px ;
-                left: 0 ;
-                margin: 5px auto 0 auto ;
-                overflow: visible ; 
-            }
-            .avatar-box-ea img[alt="Reclutamiento EA"] {
-                width: 100% ;
-                top: 45% ;
-                left: 50% ;
-                transform: translate(-50%, -50%) ;
-            }
-            .avatar-box-ea img[alt="Representante RH"] {
-                width: 250px ; 
-                height: auto ;
-                position: absolute ;
-                left: 50% !important;
-                transform: translateX(-50%) translateY(0);
-                bottom: 0 ; 
-                display: block ;
-            }
-
-            .footer-top-row-grid {
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-            }
-            .footer-col-redes-heading {
-                border-right: none;
-                padding-right: 0;
-                align-items: center;
-            }
-            .footer-redes-vertical-words-list {
-                align-items: center;
-            }
-            .footer-menu-horizontal-list {
-                flex-direction: column;
-                gap: 15px;
-                padding-left: 0;
-                text-align: center;
-            }
-            .footer-middle-content-wrapper {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
-            .footer-left-legals-block {
-                align-items: center;
-                text-align: center;
-            }
-            .footer-logo-box-right {
-                justify-content: center;
-            }
-            .footer-bottom-closing-bar {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
     <header>
         <div class="nav-logo">
-            <img src="Copia de texto negro.png" alt="Logo Letras EA">
+            <img src="assets/images/logos/texto-negro.png" alt="Logo Letras EA">
         </div>
-        <nav>
+        <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#ventajas">Clientes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="https://wa.me/524422696734" target="_blank">¿Buscas Trabajo?</a></li>
+                <li><a href="https://wa.me/524422696734" target="_blank" rel="noopener noreferrer">¿Buscas Trabajo?</a></li>
             </ul>
         </nav>
         <div class="nav-logo-right">
-            <img src="Copia de icono negro.png" alt="Isotipo EA Superior">
+            <img src="assets/images/logos/icono-negro.png" alt="Isotipo EA Superior">
         </div>
     </header>
 
-    <section class="hero-section">
-        <video autoplay loop muted playsinline class="hero-video-bg">
-            <source src="video head index.mp4" type="video/mp4">
-            Tu navegador no soporta videos de fondo.
-        </video>
-        <div class="hero-overlay-gradient"></div>
+    <main>
+        <section class="hero-section" aria-label="Presentación">
+            <video autoplay loop muted playsinline class="hero-video-bg">
+                <source src="assets/videos/hero.mp4" type="video/mp4">
+                Tu navegador no soporta videos de fondo.
+            </video>
+            <div class="hero-overlay-gradient" aria-hidden="true"></div>
 
-        <div class="hero-logo-big">
-            <img src="logo.png" alt="Empléate Aquí Gigante">
-        </div>
-        <div class="hero-content">
-            <h2>¿Necesitas cubrir tus vacantes?</h2>
-            <p class="hero-subtitle">Nosotros te ayudamos a encontrar a los candidatos ideales para cada posición.<strong>Tu aliado estratégico en reclutamiento.</strong></p>
-            <a href="#contacto" class="btn-hero-white click-bloom">
-                <span>Contáctate con nosotros</span>
-            </a>
-        </div>
-    </section>
+            <div class="hero-logo-big">
+                <img src="assets/images/logos/logo-hero.png" alt="Empléate Aquí">
+            </div>
+            <div class="hero-content">
+                <h2>¿Necesitas cubrir tus vacantes?</h2>
+                <p class="hero-subtitle">Nosotros te ayudamos a encontrar a los candidatos ideales para cada posición. <strong>Tu aliado estratégico en reclutamiento.</strong></p>
+                <a href="#contacto" class="btn-hero-white click-bloom">
+                    <span>Contáctate con nosotros</span>
+                </a>
+            </div>
+        </section>
 
-    <section class="about-section" id="quienes-somos">
-        <div class="section-title-container">
-            <div class="title-line" id="line-left"></div>
-            <h2>¿Quiénes Somos?</h2>
-            <div class="title-line" id="line-right"></div>
-        </div>
-        <p class="about-text">
-            Somos una empresa líder de <strong>Reclutamiento</strong> que transforma la manera de conectar <strong>TALENTO Y OPORTUNIDADES</strong>. Impulsamos procesos ágiles, humanos e innovadores para acercar a las empresas al talento humano ideal, generando <strong>CONFIANZA, EFICIENCIA</strong> y una <strong>EXPERIENCIA POSITIVA</strong> en cada contratación.
-        </p>
-        
-        <div class="divider-purple"></div>
+        <section class="about-section" id="quienes-somos">
+            <div class="section-title-container">
+                <div class="title-line" id="line-left" aria-hidden="true"></div>
+                <h2>¿Quiénes Somos?</h2>
+                <div class="title-line" id="line-right" aria-hidden="true"></div>
+            </div>
+            <p class="about-text">
+                Somos una empresa líder de <strong>Reclutamiento</strong> que transforma la manera de conectar <strong>TALENTO Y OPORTUNIDADES</strong>. Impulsamos procesos ágiles, humanos e innovadores para acercar a las empresas al talento humano ideal, generando <strong>CONFIANZA, EFICIENCIA</strong> y una <strong>EXPERIENCIA POSITIVA</strong> en cada contratación.
+            </p>
 
-        <div class="commitment-container">
-            <h4 class="commitment-title">Compromiso</h4>
-            <p class="commitment-desc">Creemos que cada vacante impacta vidas, familias y negocios, tratamos a candidatos y clientes con respeto, empatía y serenidad.</p>
-            
-            <div class="pillars-upper-row">
-                <div class="pillar-side-box">
-                    <h4>Trabajo en Equipo</h4>
-                    <p>Ganamos juntos, compartimos responsabilidades, apoyamos al equipo y celebramos los resultados colectivos.</p>
+            <div class="divider-purple" aria-hidden="true"></div>
+
+            <div class="commitment-container">
+                <h4 class="commitment-title">Compromiso</h4>
+                <p class="commitment-desc">Creemos que cada vacante impacta vidas, familias y negocios, tratamos a candidatos y clientes con respeto, empatía y serenidad.</p>
+
+                <div class="pillars-upper-row">
+                    <div class="pillar-side-box">
+                        <h4>Trabajo en Equipo</h4>
+                        <p>Ganamos juntos, compartimos responsabilidades, apoyamos al equipo y celebramos los resultados colectivos.</p>
+                    </div>
+
+                    <div class="pillar-center-logo">
+                        <img src="assets/images/logos/logo-azul-claro.png" alt="Logotipo EA Azul Claro">
+                    </div>
+
+                    <div class="pillar-side-box">
+                        <h4>Transparencia</h4>
+                        <p>Mantenemos comunicación abierta sobre avances, retos y resultados en cada proceso.</p>
+                    </div>
                 </div>
-                
-                <div class="pillar-center-logo">
-                    <img src="Copia de logo completo azul claro.png" alt="Logotipo EA Azul Claro">
-                </div>
-                
-                <div class="pillar-side-box">
-                    <h4>Transparencia</h4>
-                    <p>Mantenemos communication abierta sobre avances, retos y resultados en cada proceso.</p>
+
+                <div class="pillar-bottom-row">
+                    <h4>Innovación</h4>
+                    <p>La automatización y las herramientas digitales nos dan velocidad, pero nuestro enfoque humano garantiza la excelencia en cada contratación.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="pillar-bottom-row">
-                <h4>Innovación</h4>
-                <p>La automatización y las herramientas digitales nos dan velocidad, pero nuestro enfoque humano garantiza la excelencia en cada contratación.</p>
+        <section class="how-section" aria-labelledby="how-title">
+            <h2 id="how-title">¿Cómo lo Hacemos?</h2>
+            <div class="cards-container">
+                <article class="card">
+                    <div class="card-img-holder">
+                        <img src="assets/images/cards/iman.png" alt="Atracción">
+                    </div>
+                    <h3>Atracción Estratégica y Multicanal</h3>
+                    <p>Captamos talento mediante campañas digitales segmentadas, atención inmediata por WhatsApp y Call Center. Priorizamos un trato humano y transparente que genera compromiso desde el primer contacto.</p>
+                </article>
+                <article class="card">
+                    <div class="card-img-holder">
+                        <img src="assets/images/cards/inteligencia.png" alt="Inteligencia">
+                    </div>
+                    <h3>Inteligencia y Scouting de Mercado</h3>
+                    <p>Analizamos tendencias y competidores para medir la efectividad de nuestros procesos. Utilizamos estos datos para optimizar estrategias y asegurar contrataciones de alto impacto alineadas a tus objetivos operativos.</p>
+                </article>
+                <article class="card">
+                    <div class="card-img-holder">
+                        <img src="assets/images/cards/monita-call.png" alt="Filtros">
+                    </div>
+                    <h3>Filtros Expertos y Retención</h3>
+                    <p>Ejecutamos una pre-selección telefónica rigurosa para entregarte solo candidatos validados. Además, damos seguimiento continuo a los nuevos ingresos para medir su integración y prevenir la rotación temprana.</p>
+                </article>
             </div>
-        </div>
-    </section>
-
-    <section class="how-section">
-        <h2>¿Cómo lo Hacemos?</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-img-holder">
-                    <img src="iman.png" alt="Atracción">
-                </div>
-                <h3>Atracción Estratégica y Multicanal</h3>
-                <p>Captamos talento mediante campaigns digitales segmentadas, atención inmediata por WhatsApp y Call Center. Priorizamos un trato humano y transparente que genera compromiso desde el primer contacto.</p>
-            </div>
-            <div class="card">
-                <div class="card-img-holder">
-                    <img src="Inteligencia.png" alt="Inteligencia">
-                </div>
-                <h3>Inteligencia y Scouting de Mercado</h3>
-                <p>Analizamos tendencias y competidores para medir la efectividad de nuestros procesos. Utilizamos estos datos para optimizar estrategias y asegurar contrataciones de alto impacto alineadas a tus objetivos operativos.</p>
-            </div>
-            <div class="card">
-                <div class="card-img-holder">
-                    <img src="Monita call.png" alt="Filtros">
-                </div>
-                <h3>Filtros Expertos y Retención</h3>
-                <p>Ejecutamos una pre-selección telefónica rigurosa para entregarte solo candidatos validados. Además, damos seguimiento continuo a los nuevos ingresos para medir su integración y prevenir la rotación temprana.</p>
-            </div>
-        </div>
-        <a href="#contacto" class="btn-liquid liquid-fill btn-square-liquid click-bloom">
-            <span>Contacta con ejecutivo</span>
-        </a>
-    </section>
-
-    <section class="banner-middle">
-        <div class="banner-white-box">
-            <h3> El talento adecuado para impulsar el crecimiento de tu empresa</h3>
-            <p>Cubrimos <strong>tus vacantes</strong> para que tú <strong>te enfoques en crecer</strong>.<br>
-            Nuestro <strong>proceso de reclutamiento</strong> está diseñado para liberar tu carga operativa.<br>
-            <strong>Filtramos, validamos y seleccionamos</strong> al personal, garantizando que cada contratación sume productividad a tu operation desde el día uno.<br>
-            A través de nuestra <strong>búsqueda especializada</strong> garantizamos resultados que aseguran el éxito de cada contratación.</p>
             <a href="#contacto" class="btn-liquid liquid-fill btn-square-liquid click-bloom">
-                <span>Contáctanos</span>
+                <span>Contacta con ejecutivo</span>
             </a>
-        </div>
-    </section>
+        </section>
 
-    <section class="services-section" id="servicios">
-        <div class="services-title-side">
-            <div class="services-bg-isotipo">
-                <img src="Copia de icono negro.png" alt="Isotipo de Fondo Negro">
+        <section class="banner-middle" aria-label="Propuesta de valor">
+            <div class="banner-white-box">
+                <h3>El talento adecuado para impulsar el crecimiento de tu empresa</h3>
+                <p>Cubrimos <strong>tus vacantes</strong> para que tú <strong>te enfoques en crecer</strong>.<br>
+                Nuestro <strong>proceso de reclutamiento</strong> está diseñado para liberar tu carga operativa.<br>
+                <strong>Filtramos, validamos y seleccionamos</strong> al personal, garantizando que cada contratación sume productividad a tu operación desde el día uno.<br>
+                A través de nuestra <strong>búsqueda especializada</strong> garantizamos resultados que aseguran el éxito de cada contratación.</p>
+                <a href="#contacto" class="btn-liquid liquid-fill btn-square-liquid click-bloom">
+                    <span>Contáctanos</span>
+                </a>
             </div>
-            <h2>Servicios</h2>
-        </div>
-        <div class="services-card-white">
-            <h4 style="font-weight: 500;">Ofrecemos cobertura de vacantes con <strong>garantía de permanencia</strong>.</h4>
-            <p>Realizamos un levantamiento personalizado del perfil del puesto, <strong>generamos e implementamos</strong> las estrategias de reclutamiento y nos especializamos en gestionarlos procesos de selección y con nuestra <strong>Ruta del Empleo</strong> apoyamos, agilizamos y facilitamos el proceso de los candidatos con traslado a la entrevista.</p>
-            <div class="small-logo-box">
-                <img src="Copia de logo completo azul claro.png" alt="Logo Reclutamiento EA Azul Claro">
+        </section>
+
+        <section class="services-section" id="servicios">
+            <div class="services-title-side">
+                <div class="services-bg-isotipo" aria-hidden="true">
+                    <img src="assets/images/logos/icono-negro.png" alt="">
+                </div>
+                <h2>Servicios</h2>
             </div>
-        </div>
-    </section>
-
-    <section class="advantages-section" id="ventajas">
-        <h2>Ventajas</h2>
-        
-        <div class="badge-grid">
-            <div class="badge-item">Iniciamos la búsqueda y reclutamiento <strong>sin ningún tipo de anticipo.</strong></div>
-            <div class="badge-item">Realizamos el levantamiento de <strong>perfil descriptivo del puesto y análisis de rutas.</strong></div>
-            <div class="badge-item"><strong>Facturamos</strong> el servicio hasta el <strong>ingreso del candidato a laborar.</strong></div>
-            <div class="badge-item">Especialistas en <strong>reclutamiento operativo</strong> con <strong>tecnología ágil y trato humano.</strong></div>
-        </div>
-
-        <div class="badge-divider-line"></div>
-
-        <div class="advantages-mirror-box">
-            <div class="mirror-side-graphic">
-                <img src="Copia de icono azul claro.png" alt="EA Grande Izquierda">
+            <div class="services-card-white">
+                <h4>Ofrecemos cobertura de vacantes con <strong>garantía de permanencia</strong>.</h4>
+                <p>Realizamos un levantamiento personalizado del perfil del puesto, <strong>generamos e implementamos</strong> las estrategias de reclutamiento y nos especializamos en gestionar los procesos de selección y con nuestra <strong>Ruta del Empleo</strong> apoyamos, agilizamos y facilitamos el proceso de los candidatos con traslado a la entrevista.</p>
+                <div class="small-logo-box">
+                    <img src="assets/images/logos/logo-azul-claro.png" alt="Logo Reclutamiento EA Azul Claro">
+                </div>
             </div>
+        </section>
 
-            <div class="mirror-center-text-block">
-                <p>Nuestro objetivo es <strong>destacar los beneficios de tu empresa</strong> para atraer más candidatos a tus vacantes.</p>
-                <p>Utilizamos estrategias digitales avanzadas, campañas en redes sociales, <strong>WhatsApp y atención personalizada por Call Center</strong>, para llegar a más candidatos.</p>
-                <p>Ofrecemos <strong>atención personalizada, comprometida y de alta calidad</strong> a cada candidato, con <strong>empatía, transparencia y seguimiento constante.</strong></p>
-                <p>Nuestro objetivo es brindar una buena experiencia en la <strong>búsqueda de empleo</strong> y lograr contrataciones <strong>efectivas y satisfactorias.</strong></p>
+        <section class="advantages-section" id="ventajas">
+            <h2>Ventajas</h2>
+
+            <div class="badge-grid">
+                <div class="badge-item">Iniciamos la búsqueda y reclutamiento <strong>sin ningún tipo de anticipo.</strong></div>
+                <div class="badge-item">Realizamos el levantamiento de <strong>perfil descriptivo del puesto y análisis de rutas.</strong></div>
+                <div class="badge-item"><strong>Facturamos</strong> el servicio hasta el <strong>ingreso del candidato a laborar.</strong></div>
+                <div class="badge-item">Especialistas en <strong>reclutamiento operativo</strong> con <strong>tecnología ágil y trato humano.</strong></div>
             </div>
 
-            <div class="mirror-side-graphic">
-                <img src="Copia de icono azul claro.png" alt="EA Grande Derecha">
-            </div>
-        </div>
+            <div class="badge-divider-line" aria-hidden="true"></div>
 
-        <div class="metrics-container">
-            <div class="metric-block">
-                <div class="metric-num">+5 AÑOS</div>
-                <div class="metric-label">Fortaleciendo Equipos</div>
-            </div>
-            <div class="metric-block">
-                <div class="metric-num">+2,000</div>
-                <div class="metric-label">Posiciones cubiertas anualmente</div>
-            </div>
-            <div class="metric-block">
-                <div class="metric-num">+10,000</div>
-                <div class="metric-label">Candidatos en proceso anualmente</div>
-            </div>
-            <div class="metric-block">
-                <div class="metric-num">+30</div>
-                <div class="metric-label">Clientes Satisfechos</div>
-            </div>
-            <div class="metric-block">
-                <div class="metric-num" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 8px;">COBERTURA ESTRATÉGICA</div>
-            </div>
-            <div class="metric-block">
-                <div class="metric-num" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 8px;"</div>PROCESOS CON ENFOQUE EN CALIDAD Y CONFIDENCIALIDAD</div>
-            </div>
-        </div>
-    </section>
+            <div class="advantages-mirror-box">
+                <div class="mirror-side-graphic" aria-hidden="true">
+                    <img src="assets/images/icons/icono-azul-claro.png" alt="">
+                </div>
 
-    <section class="contact-section" id="contacto">
-        <div class="clients-white-card">
-            <h3>Nuestros<br>Clientes</h3>
-        </div>
+                <div class="mirror-center-text-block">
+                    <p>Nuestro objetivo es <strong>destacar los beneficios de tu empresa</strong> para atraer más candidatos a tus vacantes.</p>
+                    <p>Utilizamos estrategias digitales avanzadas, campañas en redes sociales, <strong>WhatsApp y atención personalizada por Call Center</strong>, para llegar a más candidatos.</p>
+                    <p>Ofrecemos <strong>atención personalizada, comprometida y de alta calidad</strong> a cada candidato, con <strong>empatía, transparencia y seguimiento constante.</strong></p>
+                    <p>Nuestro objetivo es brindar una buena experiencia en la <strong>búsqueda de empleo</strong> y lograr contrataciones <strong>efectivas y satisfactorias.</strong></p>
+                </div>
 
-        <div class="contact-wrap">
-            <div class="contact-info-side">
-                <h2>Contáctanos</h2>
-                <div class="avatar-box-ea">
-                    <img src="Copia de icono negro.png" alt="Reclutamiento EA">
-                    <img src="RH.png" alt="Representante RH">
+                <div class="mirror-side-graphic" aria-hidden="true">
+                    <img src="assets/images/icons/icono-azul-claro.png" alt="">
                 </div>
             </div>
 
-            <div class="contact-form-side">
-                <p class="form-headline">Déjanos tu datos y nosotros te contactamos</p>
-                
-                <form id="subscribe-form" novalidate>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" class="form-control" required autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Número Telefónico (WhatsApp)</label>
-                        <input type="tel" id="telefono" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="perfil">Tipo de Perfil que Necesitas</label>
-                        <input type="text" id="perfil" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="urgencia">Urgencia del Proceso</label>
-                        <input type="text" id="urgencia" class="form-control" required>
-                    </div>
-
-                    <button type="submit" class="btn-submit-full btn-submit-bloom" id="submit-btn">
-                        <span>Enviar</span>
-                    </button>
-                    <p class="form-status" id="form-status" role="status" aria-live="polite" style="margin-top: 15px; font-weight: 700;"></p>
-                </form>
+            <div class="metrics-container">
+                <div class="metric-block">
+                    <div class="metric-num">+5 AÑOS</div>
+                    <div class="metric-label">Fortaleciendo Equipos</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-num">+2,000</div>
+                    <div class="metric-label">Posiciones cubiertas anualmente</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-num">+10,000</div>
+                    <div class="metric-label">Candidatos en proceso anualmente</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-num">+30</div>
+                    <div class="metric-label">Clientes Satisfechos</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-num metric-num--compact">COBERTURA ESTRATÉGICA</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-num metric-num--compact">PROCESOS CON ENFOQUE EN CALIDAD Y CONFIDENCIALIDAD</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div class="clients-white-card">
+                <h3>Nuestros<br>Clientes</h3>
+            </div>
+
+            <div class="contact-wrap">
+                <div class="contact-info-side">
+                    <h2>Contáctanos</h2>
+                    <div class="avatar-box-ea">
+                        <img class="avatar-box-ea__watermark" src="assets/images/logos/icono-negro.png" alt="">
+                        <img class="avatar-box-ea__avatar" src="assets/images/avatars/rh.png" alt="Representante de recursos humanos">
+                    </div>
+                </div>
+
+                <div class="contact-form-side">
+                    <p class="form-headline">Déjanos tu datos y nosotros te contactamos</p>
+
+                    <form id="subscribe-form" novalidate>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Número Telefónico (WhatsApp)</label>
+                            <input type="tel" id="telefono" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="perfil">Tipo de Perfil que Necesitas</label>
+                            <input type="text" id="perfil" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgencia">Urgencia del Proceso</label>
+                            <input type="text" id="urgencia" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit-bloom" id="submit-btn">
+                            <span>Enviar</span>
+                        </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-top-row-grid">
@@ -1632,7 +274,7 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#ventajas">Clientes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="https://wa.me/524422696734" target="_blank">¿Buscas Trabajo?</a></li>
+                <li><a href="https://wa.me/524422696734" target="_blank" rel="noopener noreferrer">¿Buscas Trabajo?</a></li>
             </ul>
         </div>
 
@@ -1641,97 +283,32 @@
                 <a href="#" class="legal-link">Aviso de Privacidad</a>
                 <a href="#" class="legal-link">Términos y Condiciones</a>
                 <div class="footer-address-block">
-                    <img src="ubicacion.png" alt="Icono Ubicación" class="footer-address-icon">
+                    <img src="assets/images/icons/ubicacion.png" alt="" class="footer-address-icon">
                     <span>Calle José María Pino Suárez 271-Int N, Niños Héroes, 76010 Santiago de Querétaro, Qro.</span>
                 </div>
             </div>
 
             <div class="footer-logo-box-right">
-                <img src="Copia de Logo completo blanco.png" alt="Logo Completo Blanco EA">
+                <img src="assets/images/logos/logo-blanco.png" alt="Logo Completo Blanco EA">
             </div>
         </div>
 
         <div class="footer-bottom-closing-bar">
-            <div class="footer-slogan-text">
-                BENDECIMOS VIDAS A TRAVES DEL TRABAJO.
-            </div>
+            <p class="footer-slogan-text">BENDECIMOS VIDAS A TRAVÉS DEL TRABAJO.</p>
             <div class="footer-social-icons-row">
-                <a href="https://wa.me/524422696734" target="_blank"><img src="whatsapp-2.png" alt="WhatsApp Icon"></a>
-                <a href="#" target="_blank"><img src="linkedin.png" alt="LinkedIn Icon"></a>
-                <a href="#" target="_blank"><img src="facebook.png" alt="Facebook Icon"></a>
-                <a href="#" target="_blank"><img src="instagram.png" alt="Instagram Icon"></a>
-                <a href="#" target="_blank"><img src="tik-tok-2.png" alt="TikTok Icon"></a>
+                <a href="https://wa.me/524422696734" target="_blank" rel="noopener noreferrer"><img src="assets/images/social/whatsapp.png" alt="WhatsApp"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/images/social/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/images/social/facebook.png" alt="Facebook"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/images/social/instagram.png" alt="Instagram"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/images/social/tiktok.png" alt="TikTok"></a>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/524422696734?text=Hola,%20solicito%20información%20sobre%20los%20servicios%20de%20reclutamiento" target="_blank" class="whatsapp-float">
-        <img src="boton-WhatsApp.png" alt="WhatsApp Corporativo">
+    <a href="https://wa.me/524422696734?text=Hola,%20solicito%20información%20sobre%20los%20servicios%20de%20reclutamiento" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <img src="assets/images/social/whatsapp-float.png" alt="">
     </a>
 
-    <script>
-        const bloomButtons = document.querySelectorAll('.click-bloom, .btn-submit-bloom');
-
-        bloomButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                this.classList.add('bloom-active');
-                
-                setTimeout(() => {
-                    this.classList.remove('bloom-active');
-                }, 450);
-            });
-        });
-
-        const form = document.getElementById('subscribe-form');
-        const emailInput = document.getElementById('email');
-        const submitBtn = document.getElementById('submit-btn');
-        const formStatus = document.getElementById('form-status');
-
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            const email = emailInput.value.trim();
-            if (!email) return;
-
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span>Enviando...</span>';
-            formStatus.textContent = '';
-            formStatus.style.color = '#ffffff';
-
-            const isLocalFile = window.location.protocol === 'file:';
-            const apiUrl = isLocalFile ? 'http://localhost:5555/api/contact' : '/api/contact';
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.error || 'No pudimos procesar tu registro.');
-                }
-
-                formStatus.textContent = "¡Gracias! Nuestro equipo se pondrá en contacto contigo pronto.";
-                formStatus.style.color = "#d4ffda";
-                form.reset();
-            } catch (error) {
-                formStatus.textContent = error.message;
-                formStatus.style.color = "#ffd4d4";
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<span>Enviar</span>';
-            }
-        });
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 1000, // Duración de la animación
-        once: true      // Que solo se anime una vez al hacer scroll
-    });
-</script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

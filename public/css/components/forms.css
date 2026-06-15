@@ -1,0 +1,46 @@
+.form-headline {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    width: 100%;
+    background-color: var(--color-white);
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-status {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.form-status--success {
+    color: #d4ffda;
+}
+
+.form-status--error {
+    color: #ffd4d4;
+}

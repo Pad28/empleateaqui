@@ -1,0 +1,82 @@
+.contact-section {
+    background: var(--gradient-contact-overlay),
+        url('../../assets/images/backgrounds/worker-protesting.jpg') no-repeat center center/cover;
+    padding: var(--section-padding) 10% 60px;
+    color: var(--color-white);
+}
+
+.clients-white-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 60px 60px 60px 35px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    min-height: 400px;
+    text-align: left;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.clients-white-card h3 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.contact-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info-side {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info-side h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.avatar-box-ea {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 520px;
+    margin-top: 40px;
+}
+
+.avatar-box-ea__watermark {
+    position: absolute;
+    z-index: 1;
+    width: 130%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+
+.avatar-box-ea__avatar {
+    width: 550px;
+    position: absolute;
+    bottom: -16.9%;
+    left: 43%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.contact-form-side {
+    flex: 1.2;
+    width: 100%;
+    text-align: left;
+}

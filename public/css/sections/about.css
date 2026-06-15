@@ -1,0 +1,114 @@
+.about-section {
+    padding: var(--section-padding) 0;
+    text-align: center;
+    background-color: var(--color-white);
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: var(--color-white);
+    padding: 0 30px;
+    z-index: 10;
+}
+
+.about-text {
+    max-width: 950px;
+    margin: 0 auto 50px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    line-height: 1.8;
+    padding: 0 5%;
+}
+
+.about-text strong {
+    font-weight: 800;
+}
+
+.commitment-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.commitment-desc {
+    font-size: 1.05rem;
+    font-weight: 500;
+    max-width: 520px;
+    margin: 0 auto 60px;
+    color: #222222;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.pillars-upper-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 auto 50px;
+}
+
+.pillar-side-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.commitment-title,
+.pillar-side-box h4,
+.pillar-bottom-row h4 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000000;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.pillar-side-box p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.5;
+    max-width: 290px;
+    text-align: center;
+}
+
+.pillar-center-logo {
+    flex: 0 0 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pillar-center-logo img {
+    width: 100%;
+}
+
+.pillar-bottom-row {
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.pillar-bottom-row p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.5;
+    text-align: center;
+}
