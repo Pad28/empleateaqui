@@ -1,0 +1,27 @@
+:root {
+    --color-primary: #5a39fa;
+    --color-primary-dark: #3956fa;
+    --color-primary-light: #f4f2ff;
+    --color-text: #333333;
+    --color-text-dark: #111111;
+    --color-text-muted: #555555;
+    --color-white: #ffffff;
+    --color-footer-bg: #e5e5e5;
+    --color-section-alt: #fdfdfd;
+
+    --font-family: 'Bai Jamjuree', sans-serif;
+
+    --header-height: 110px;
+    --container-max: 1200px;
+    --section-padding: 80px;
+    --radius-lg: 40px;
+    --radius-md: 24px;
+    --radius-sm: 12px;
+
+    --shadow-card: 0 10px 30px rgba(90, 57, 250, 0.2);
+    --shadow-elevated: 0 15px 40px rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    --gradient-hero-overlay: linear-gradient(rgba(90, 57, 250, 0.88), rgba(57, 86, 250, 0.88));
+    --gradient-section-overlay: linear-gradient(rgba(90, 57, 250, 0.85), rgba(57, 86, 250, 0.85));
+    --gradient-contact-overlay: linear-gradient(rgba(90, 57, 250, 0.88), rgba(57, 86, 250, 0.88));
+}

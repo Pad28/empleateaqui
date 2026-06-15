@@ -1,0 +1,16 @@
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('layout/header.css');
+@import url('layout/footer.css');
+@import url('components/buttons.css');
+@import url('components/forms.css');
+@import url('components/section-title.css');
+@import url('components/whatsapp.css');
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/how.css');
+@import url('sections/banner.css');
+@import url('sections/services.css');
+@import url('sections/advantages.css');
+@import url('sections/contact.css');
+@import url('responsive.css');

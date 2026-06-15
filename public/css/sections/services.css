@@ -1,0 +1,95 @@
+.services-section {
+    background: var(--gradient-section-overlay),
+        url('../../assets/images/backgrounds/man-safety-equipment.jpg') no-repeat center center/cover;
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+}
+
+.services-title-side {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 160px;
+    max-width: 480px;
+    margin-right: 40px;
+}
+
+.services-title-side h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-white);
+    position: relative;
+    z-index: 5;
+    letter-spacing: -1px;
+    text-align: right;
+}
+
+.services-bg-isotipo {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.services-bg-isotipo img {
+    width: 100%;
+}
+
+.services-card-white {
+    flex: 1;
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 45px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 5;
+}
+
+.services-card-white h4 {
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.services-card-white h4 strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.services-card-white p {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.services-card-white p strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.small-logo-box {
+    width: 130px;
+    margin: 0 auto;
+}
+
+.small-logo-box img {
+    width: 100%;
+}
