@@ -88,6 +88,10 @@
 }
 
 @media (min-width: 901px) {
+    .contact-wrap {
+        gap: 180px;
+    }
+
     .avatar-box-ea {
         overflow: visible;
     }
@@ -102,8 +106,8 @@
     }
 
     .avatar-box-ea__avatar {
-        width: 370px;
-        max-width: 78%;
+        width: 460px;
+        max-width: 90%;
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
