@@ -26,7 +26,8 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     transform-origin: left center;
-    animation: arrive-from-left 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    transform: translateY(-50%) scaleX(0);
+    opacity: 0;
 }
 
 #line-right {
@@ -37,6 +38,15 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     transform-origin: right center;
+    transform: translateY(-50%) scaleX(0);
+    opacity: 0;
+}
+
+.section-title-container.is-visible #line-left {
+    animation: arrive-from-left 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.section-title-container.is-visible #line-right {
     animation: arrive-from-right 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
