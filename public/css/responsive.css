@@ -1,25 +1,119 @@
-@media (max-width: 900px) {
-    header {
-        padding: 15px 4%;
+/* ── Tablet landscape / small laptop ── */
+@media (max-width: 1200px) {
+    .badge-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    nav {
-        display: none;
+    .mirror-side-graphic {
+        flex: 0 0 200px;
+    }
+
+    .mirror-center-text-block {
+        font-size: 1.15rem;
+    }
+
+    .services-title-side h2 {
+        font-size: 3rem;
+    }
+}
+
+/* ── Tablet portrait ── */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 60px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .services-section {
+        flex-direction: column;
+        gap: 40px;
+        padding: 70px 8%;
+    }
+
+    .services-title-side {
+        justify-content: center;
+        margin-right: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .services-title-side h2 {
+        text-align: center;
+        font-size: 2.8rem;
+    }
+
+    .services-bg-isotipo {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .services-card-white {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 2.6rem;
+    }
+
+    .contact-info-side h2 {
+        font-size: 2.6rem;
+    }
+}
+
+/* ── Mobile / large phone ── */
+@media (max-width: 900px) {
+    :root {
+        --header-height: var(--header-height-mobile);
+        --section-padding: 50px;
+    }
+
+    header {
+        padding: 12px 4%;
+        padding-top: max(12px, env(safe-area-inset-top));
+    }
+
+    .nav-logo {
+        height: 70px;
+    }
+
+    .nav-logo img {
+        height: 160%;
+        max-width: 160px;
+    }
+
+    .nav-logo-right {
+        height: 50px;
+    }
+
+    .nav-logo-right img {
+        height: 160%;
+        max-width: 50px;
     }
 
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        padding-top: calc(var(--header-height) + 30px);
         padding-left: 5%;
         padding-right: 5%;
         min-height: auto;
-        gap: 20px;
+        gap: 24px;
         overflow-x: hidden;
     }
 
     .hero-logo-big {
-        max-width: 260px;
+        max-width: 240px;
         margin: 0 auto;
     }
 
@@ -30,7 +124,12 @@
     }
 
     .hero-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.75rem;
+    }
+
+    .hero-content p.hero-subtitle {
+        font-size: 1.05rem;
+        max-width: 100%;
     }
 
     #line-left,
@@ -40,89 +139,174 @@
 
     .section-title-container {
         height: auto;
+        margin-bottom: 30px;
     }
 
     .about-section h2 {
         font-size: 1.8rem;
         white-space: normal;
-        padding: 0;
+        padding: 0 16px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        padding: 0 6%;
     }
 
     .commitment-title,
     .pillar-side-box h4,
     .pillar-bottom-row h4 {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .pillars-upper-row {
         flex-direction: column;
-        gap: 40px;
+        gap: 36px;
     }
 
     .pillar-side-box {
         max-width: 100%;
     }
 
+    .pillar-side-box p {
+        max-width: 100%;
+    }
+
     .pillar-center-logo {
-        max-width: 130px;
+        flex: none;
+        max-width: 120px;
         margin: 0 auto;
     }
 
-    .cards-container,
-    .badge-grid,
-    .contact-wrap {
+    .how-section {
+        padding: var(--section-padding) 6%;
+    }
+
+    .how-section h2 {
+        font-size: 2rem;
+        margin-bottom: 36px;
+    }
+
+    .cards-container {
         grid-template-columns: 1fr;
-        flex-direction: column;
-        gap: 30px;
+        gap: 24px;
+    }
+
+    .card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .card h3 {
+        min-height: auto;
+    }
+
+    .banner-middle {
+        padding: 70px 5%;
+    }
+
+    .banner-white-box {
+        padding: 40px 8%;
+        border-radius: 32px;
+    }
+
+    .banner-white-box h3 {
+        font-size: 1.25rem;
+    }
+
+    .services-section {
+        padding: 60px 6%;
+    }
+
+    .services-title-side h2 {
+        font-size: 2.4rem;
+    }
+
+    .services-card-white {
+        padding: 32px 28px;
+        border-radius: 28px;
+    }
+
+    .advantages-section h2 {
+        font-size: 2rem;
+        padding: 0 16px;
+    }
+
+    .badge-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 6%;
     }
 
     .advantages-mirror-box {
         flex-direction: column;
-        gap: 30px;
-        padding: 0 20px;
+        gap: 24px;
+        padding: 0 6%;
+        margin-bottom: 60px;
     }
 
     .mirror-side-graphic {
-        max-width: 160px;
+        flex: none;
+        max-width: 120px;
     }
 
-    .services-section {
-        flex-direction: column;
+    .mirror-center-text-block {
+        font-size: 1.05rem;
+        gap: 18px;
     }
 
-    .services-title-side {
-        height: auto;
-        justify-content: center;
-        margin-right: 0;
-        max-width: 100%;
+    .metrics-container {
+        margin-top: 50px;
+        gap: 28px;
     }
 
-    .services-title-side h2 {
-        text-align: center;
+    .metric-num {
+        font-size: 2.4rem;
     }
 
-    .services-bg-isotipo {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    .metric-num--compact {
+        font-size: 1.6rem;
+    }
+
+    .metric-label {
+        font-size: 1.2rem;
+    }
+
+    .contact-section {
+        padding: var(--section-padding) 6% 50px;
+    }
+
+    .clients-white-card {
+        padding: 40px 28px;
+        min-height: auto;
+        border-radius: 28px;
+        margin-bottom: 50px;
+    }
+
+    .clients-white-card h3 {
+        font-size: 1.6rem;
     }
 
     .contact-wrap {
         flex-direction: column-reverse;
-        gap: 10px;
+        gap: 30px;
+    }
+
+    .contact-info-side {
+        text-align: center;
     }
 
     .contact-info-side h2 {
         font-size: 2rem;
         text-align: center;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .avatar-box-ea {
-        height: 340px;
+        height: 300px;
         width: 100%;
-        max-width: 340px;
-        margin: 5px auto 0;
+        max-width: 300px;
+        margin: 10px auto 0;
         overflow: visible;
     }
 
@@ -134,15 +318,31 @@
     }
 
     .avatar-box-ea__avatar {
-        width: 250px;
+        width: 220px;
+        max-width: 100%;
         left: 50% !important;
         transform: translateX(-50%);
         bottom: 0;
     }
 
+    .contact-form-side {
+        flex: none;
+        width: 100%;
+    }
+
+    .form-headline {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 40px 6% 30px;
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+    }
+
     .footer-top-row-grid {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         align-items: center;
     }
 
@@ -158,7 +358,7 @@
 
     .footer-menu-horizontal-list {
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
         padding-left: 0;
         text-align: center;
     }
@@ -166,7 +366,7 @@
     .footer-middle-content-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 28px;
     }
 
     .footer-left-legals-block {
@@ -174,13 +374,182 @@
         text-align: center;
     }
 
+    .footer-address-block {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .footer-logo-box-right {
         justify-content: center;
+    }
+
+    .footer-logo-box-right img {
+        width: 160px;
     }
 
     .footer-bottom-closing-bar {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        bottom: max(20px, env(safe-area-inset-bottom, 20px));
+        left: max(20px, env(safe-area-inset-left, 20px));
+    }
+}
+
+/* ── Small phone ── */
+@media (max-width: 600px) {
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-logo-big {
+        max-width: 200px;
+    }
+
+    .about-section h2,
+    .how-section h2,
+    .advantages-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .banner-white-box {
+        padding: 32px 6%;
+        border-radius: 24px;
+    }
+
+    .banner-white-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .banner-white-box p {
+        font-size: 0.85rem;
+    }
+
+    .services-title-side h2 {
+        font-size: 2rem;
+    }
+
+    .metric-num {
+        font-size: 2rem;
+    }
+
+    .metric-num--compact {
+        font-size: 1.35rem;
+    }
+
+    .metric-label {
+        font-size: 1rem;
+    }
+
+    .btn-liquid,
+    .btn-hero-white {
+        padding: 14px 28px;
+        font-size: 0.85rem;
+    }
+
+    .divider-purple {
+        width: 92%;
+    }
+}
+
+/* ── Very small phone ── */
+@media (max-width: 480px) {
+    .nav-logo-right {
+        display: none;
+    }
+
+    .nav-logo img {
+        max-width: 140px;
+    }
+
+    .hero-section {
+        padding-top: calc(var(--header-height) + 20px);
+    }
+
+    .hero-content h2 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+    }
+
+    .hero-content p.hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .card {
+        padding: 28px 22px;
+    }
+
+    .clients-white-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-info-side h2 {
+        font-size: 1.75rem;
+    }
+
+    .avatar-box-ea {
+        height: 260px;
+        max-width: 260px;
+    }
+
+    .avatar-box-ea__avatar {
+        width: 190px;
+    }
+
+    .footer-slogan-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* ── Landscape phone ── */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + 16px);
+        padding-bottom: 30px;
+    }
+
+    .hero-logo-big {
+        max-width: 180px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-content p.hero-subtitle {
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .main-nav {
+        transition: none;
+    }
+}
+
+/* ── Touch devices: remove hover-dependent effects ── */
+@media (hover: none) and (pointer: coarse) {
+    .btn-liquid:active,
+    .btn-hero-white:active {
+        transform: scale(0.97);
+    }
+
+    .whatsapp-float:hover {
+        transform: none;
     }
 }

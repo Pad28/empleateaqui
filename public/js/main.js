@@ -11,48 +11,48 @@
     });
 
     const form = document.getElementById('subscribe-form');
-    if (!form) return;
+    if (form) {
+        const emailInput = document.getElementById('email');
+        const submitBtn = document.getElementById('submit-btn');
+        const formStatus = document.getElementById('form-status');
 
-    const emailInput = document.getElementById('email');
-    const submitBtn = document.getElementById('submit-btn');
-    const formStatus = document.getElementById('form-status');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+            const email = emailInput.value.trim();
+            if (!email) return;
 
-        const email = emailInput.value.trim();
-        if (!email) return;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Enviando...</span>';
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
 
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Enviando...</span>';
-        formStatus.textContent = '';
-        formStatus.className = 'form-status';
+            const isLocalFile = window.location.protocol === 'file:';
+            const apiUrl = isLocalFile ? 'http://localhost:5555/api/contact' : '/api/contact';
 
-        const isLocalFile = window.location.protocol === 'file:';
-        const apiUrl = isLocalFile ? 'http://localhost:5555/api/contact' : '/api/contact';
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
 
-        try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email })
-            });
+                const data = await response.json();
 
-            const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.error || 'No pudimos procesar tu registro.');
+                }
 
-            if (!response.ok) {
-                throw new Error(data.error || 'No pudimos procesar tu registro.');
+                formStatus.textContent = '¡Gracias! Nuestro equipo se pondrá en contacto contigo pronto.';
+                formStatus.className = 'form-status form-status--success';
+                form.reset();
+            } catch (error) {
+                formStatus.textContent = error.message;
+                formStatus.className = 'form-status form-status--error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Enviar</span>';
             }
-
-            formStatus.textContent = '¡Gracias! Nuestro equipo se pondrá en contacto contigo pronto.';
-            formStatus.className = 'form-status form-status--success';
-            form.reset();
-        } catch (error) {
-            formStatus.textContent = error.message;
-            formStatus.className = 'form-status form-status--error';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>Enviar</span>';
-        }
-    });
+        });
+    }
 })();

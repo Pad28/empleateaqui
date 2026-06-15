@@ -27,9 +27,11 @@
     border-radius: 25px;
     padding: 12px 20px;
     font-family: var(--font-family);
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-status {

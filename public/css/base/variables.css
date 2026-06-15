@@ -12,6 +12,7 @@
     --font-family: 'Bai Jamjuree', sans-serif;
 
     --header-height: 110px;
+    --header-height-mobile: 80px;
     --container-max: 1200px;
     --section-padding: 80px;
     --radius-lg: 40px;

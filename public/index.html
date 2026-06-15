@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Empléate Aquí - Reclutamiento Digital de Talento</title>
     <meta name="description" content="Reclutamiento digital de talento. Tu aliado estratégico para cubrir vacantes con procesos ágiles, humanos e innovadores.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,20 @@
 
     <header>
         <div class="nav-logo">
-            <img src="assets/images/logos/texto-negro.png" alt="Logo Letras EA">
+            <a href="#" aria-label="Empléate Aquí - Inicio">
+                <img src="assets/images/logos/texto-negro.png" alt="Logo Letras EA">
+            </a>
         </div>
-        <nav aria-label="Navegación principal">
+
+        <button type="button" class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-overlay" aria-hidden="true"></div>
+
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
             <ul>
                 <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -309,6 +320,7 @@
         <img src="assets/images/social/whatsapp-float.png" alt="">
     </a>
 
+    <script src="js/nav.js" defer></script>
     <script src="js/scroll-reveal.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
