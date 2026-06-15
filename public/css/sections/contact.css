@@ -88,14 +88,25 @@
 }
 
 @media (min-width: 901px) {
+    .avatar-box-ea {
+        overflow: visible;
+    }
+
     .avatar-box-ea__watermark {
-        width: 130%;
+        width: 175%;
+        max-width: none;
+        opacity: 1;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .avatar-box-ea__avatar {
-        width: 550px;
-        max-width: none;
-        left: 43%;
+        width: 370px;
+        max-width: 78%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
     }
 }
 
