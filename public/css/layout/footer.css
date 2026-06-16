@@ -108,6 +108,10 @@ footer {
     color: var(--color-primary);
 }
 
+.footer-left-legals-block .footer-social-icons-row {
+    margin-top: 4px;
+}
+
 .footer-address-block {
     display: flex;
     align-items: flex-start;
@@ -118,6 +122,11 @@ footer {
     line-height: 1.5;
     max-width: 420px;
     margin-top: 10px;
+    text-decoration: none;
+}
+
+.footer-address-block:hover {
+    color: var(--color-primary);
 }
 
 .footer-address-icon {
@@ -173,4 +182,21 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+@media (min-width: 901px) {
+    footer {
+        position: relative;
+    }
+
+    .footer-left-legals-block .footer-social-icons-row {
+        position: absolute;
+        right: 8%;
+        bottom: 40px;
+        margin-top: 0;
+    }
+
+    .footer-bottom-closing-bar {
+        justify-content: flex-start;
+    }
 }

@@ -68,7 +68,7 @@
 
 .services-card-white h4 {
     color: var(--color-primary);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.6;
     margin-bottom: 25px;
@@ -76,12 +76,12 @@
 }
 
 .services-card-white h4 strong {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     font-weight: 800;
 }
 
 .services-card-white p {
-    font-size: 0.82rem;
+    font-size: 1.1rem;
     color: var(--color-text-muted);
     line-height: 1.7;
     margin-bottom: 30px;

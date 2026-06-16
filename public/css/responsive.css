@@ -435,6 +435,11 @@
         text-align: center;
     }
 
+    .footer-left-legals-block .footer-social-icons-row {
+        justify-content: center;
+        margin: 12px 0 8px;
+    }
+
     .footer-address-block {
         justify-content: center;
         text-align: center;
@@ -498,7 +503,7 @@
     }
 
     .banner-white-box p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .services-title-side h2 {
