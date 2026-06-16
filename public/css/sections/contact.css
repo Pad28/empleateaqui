@@ -88,27 +88,49 @@
 }
 
 @media (min-width: 901px) {
+    .contact-section {
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+
     .contact-wrap {
         gap: 180px;
+        align-items: stretch;
+    }
+
+    .contact-info-side {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: visible;
     }
 
     .avatar-box-ea {
+        flex: 1;
+        height: auto;
+        min-height: 0;
+        margin-top: 30px;
+        margin-bottom: 0;
+        max-width: 560px;
         overflow: visible;
     }
 
     .avatar-box-ea__watermark {
-        width: 175%;
-        max-width: none;
+        width: auto;
+        height: 100%;
+        max-width: 165%;
+        object-fit: contain;
+        object-position: center center;
         opacity: 1;
-        top: 38%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     .avatar-box-ea__avatar {
-        width: 460px;
-        max-width: 90%;
-        left: 50%;
+        width: 540px;
+        max-width: 100%;
+        left: 48%;
         transform: translateX(-50%);
         bottom: 0;
     }
