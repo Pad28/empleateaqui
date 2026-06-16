@@ -1,5 +1,6 @@
 /* ── Tablet landscape / small laptop ── */
 @media (max-width: 1200px) {
+
     #line-left,
     #line-right {
         display: none;
@@ -290,7 +291,8 @@
     }
 
     .contact-section {
-        padding: var(--section-padding) 6% 50px;
+        padding: var(--section-padding) 6% 0;
+        overflow: hidden;
     }
 
     .clients-white-card {
@@ -338,29 +340,32 @@
 
     .avatar-box-ea {
         order: 3;
-        height: 160px;
+        position: relative;
+        height: 380px;
         width: 100%;
-        max-width: 220px;
-        margin: 4px auto 0;
+        max-width: 400px;
+        margin: 8px auto 0;
         overflow: visible;
     }
 
     .avatar-box-ea__watermark {
-        width: 90%;
-        max-width: 180px;
-        top: 50%;
+        width: auto;
+        height: 125%;
+        max-width: 220%;
+        object-fit: contain;
+        object-position: center center;
+        top: 18%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 0.15;
+        opacity: 1;
     }
 
     .avatar-box-ea__avatar {
         width: auto;
-        max-width: 160px;
-        max-height: 160px;
+        max-width: 100%;
         height: auto;
         object-fit: contain;
-        left: 50% !important;
+        left: 48% !important;
         transform: translateX(-50%);
         bottom: 0;
     }
@@ -380,7 +385,8 @@
 
     .form-control {
         padding: 14px 18px;
-        font-size: 16px; /* evita zoom automático en iOS */
+        font-size: 16px;
+        /* evita zoom automático en iOS */
         border-radius: 20px;
     }
 
@@ -558,13 +564,8 @@
     }
 
     .avatar-box-ea {
-        height: 140px;
-        max-width: 200px;
-    }
-
-    .avatar-box-ea__avatar {
-        max-width: 140px;
-        max-height: 140px;
+        height: 340px;
+        max-width: 360px;
     }
 
     .footer-slogan-text {
@@ -608,6 +609,7 @@
 
 /* ── Touch devices: remove hover-dependent effects ── */
 @media (hover: none) and (pointer: coarse) {
+
     .btn-liquid:active,
     .btn-hero-white:active {
         transform: scale(0.97);
