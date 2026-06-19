@@ -18,7 +18,9 @@
     text-align: left;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Esto apila el título y los logos */
+    align-items: flex-start; /* Esto alinea todo a la izquierda */
+    justify-content: flex-start; /* Esto empieza desde arriba */
 }
 
 .clients-white-card h3 {
@@ -27,6 +29,23 @@
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1.1;
+}
+
+.clients-logos-grid {
+    display: flex;
+    flex-wrap: wrap; /* si no caben pasa a la siguiente línea osea abajo */
+    justify-content: center; /* esto es para centrar los losgos */
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.clients-logos-grid img {
+    height: 50px; /* Tamaño controlado */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: 0.3s;
 }
 
 .contact-wrap {
