@@ -29,8 +29,9 @@
 
     .clients-white-card {
         --client-logo-w: 165px;
-        --client-logo-h: 66px;
-        padding: 48px 40px 40px;
+        --client-logo-h: 78px;
+        max-width: 100%;
+        padding: 44px 36px 40px;
         margin-bottom: 60px;
     }
 }
@@ -304,11 +305,11 @@
 
     .clients-white-card {
         --client-logo-w: 148px;
-        --client-logo-h: 60px;
+        --client-logo-h: 68px;
         --client-logo-gap: 32px;
         --client-marquee-duration: 28s;
 
-        padding: 24px 16px 28px;
+        padding: 24px 16px 32px;
         min-height: auto;
         border-radius: var(--radius-md);
         margin-bottom: 28px;
@@ -329,28 +330,56 @@
 
     .clients-marquee {
         width: 100%;
+        padding: 6px 0;
         mask-image: linear-gradient(
             90deg,
             transparent 0%,
-            #000 3%,
-            #000 97%,
+            #000 1%,
+            #000 99%,
             transparent 100%
         );
         -webkit-mask-image: linear-gradient(
             90deg,
             transparent 0%,
-            #000 3%,
-            #000 97%,
+            #000 1%,
+            #000 99%,
             transparent 100%
         );
     }
 
-    .client-logo--bitron { --logo-scale: 1.28; }
-    .client-logo--btt { --logo-scale: 0.9; }
-    .client-logo--higa { --logo-scale: 1.24; }
-    .client-logo--imi { --logo-scale: 0.92; }
-    .client-logo--kmex { --logo-scale: 1.7; }
-    .client-logo--tenneco { --logo-scale: 1.5; }
+    .clients-marquee__track {
+        min-height: 68px;
+    }
+
+    .client-logo--bitron {
+        width: 162px;
+        height: 46px;
+    }
+
+    .client-logo--btt {
+        width: 112px;
+        height: 56px;
+    }
+
+    .client-logo--higa {
+        width: 158px;
+        height: 44px;
+    }
+
+    .client-logo--imi {
+        width: 108px;
+        height: 56px;
+    }
+
+    .client-logo--kmex {
+        width: 62px;
+        height: 68px;
+    }
+
+    .client-logo--tenneco {
+        width: 172px;
+        height: 42px;
+    }
 
     .contact-wrap {
         flex-direction: column;
@@ -634,12 +663,12 @@
     }
 
     .clients-white-card {
-        --client-logo-w: 128px;
-        --client-logo-h: 52px;
+        --client-logo-w: 132px;
+        --client-logo-h: 58px;
         --client-logo-gap: 24px;
         --client-marquee-duration: 24s;
 
-        padding: 20px 12px 24px;
+        padding: 20px 12px 28px;
         margin-bottom: 24px;
     }
 
@@ -647,12 +676,39 @@
         font-size: 1.25rem;
     }
 
-    .client-logo--bitron { --logo-scale: 1.22; }
-    .client-logo--btt { --logo-scale: 0.92; }
-    .client-logo--higa { --logo-scale: 1.18; }
-    .client-logo--imi { --logo-scale: 0.94; }
-    .client-logo--kmex { --logo-scale: 1.55; }
-    .client-logo--tenneco { --logo-scale: 1.38; }
+    .clients-marquee__track {
+        min-height: 58px;
+    }
+
+    .client-logo--bitron {
+        width: 138px;
+        height: 40px;
+    }
+
+    .client-logo--btt {
+        width: 96px;
+        height: 48px;
+    }
+
+    .client-logo--higa {
+        width: 134px;
+        height: 38px;
+    }
+
+    .client-logo--imi {
+        width: 92px;
+        height: 48px;
+    }
+
+    .client-logo--kmex {
+        width: 54px;
+        height: 58px;
+    }
+
+    .client-logo--tenneco {
+        width: 148px;
+        height: 36px;
+    }
 
     .contact-info-side h2 {
         font-size: 1.65rem;

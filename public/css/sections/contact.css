@@ -10,14 +10,15 @@
 
 .clients-white-card {
     --client-logo-w: 180px;
-    --client-logo-h: 72px;
+    --client-logo-h: 88px;
     --client-logo-gap: 48px;
     --client-marquee-duration: 32s;
 
     background-color: var(--color-white);
     border-radius: var(--radius-lg);
-    padding: 60px 50px 50px 50px;
-    max-width: 900px;
+    padding: 50px 55px 55px;
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto 80px;
     min-height: auto;
     text-align: left;
@@ -40,15 +41,16 @@
 .clients-marquee {
     width: 100%;
     overflow: hidden;
+    padding: 8px 0;
     mask-image: linear-gradient(90deg,
             transparent 0%,
-            #000 8%,
-            #000 92%,
+            #000 2%,
+            #000 98%,
             transparent 100%);
     -webkit-mask-image: linear-gradient(90deg,
             transparent 0%,
-            #000 8%,
-            #000 92%,
+            #000 2%,
+            #000 98%,
             transparent 100%);
 }
 
@@ -57,7 +59,8 @@
     align-items: center;
     width: max-content;
     gap: var(--client-logo-gap);
-    padding: 8px 0;
+    padding: 6px 0;
+    min-height: 82px;
     animation: clients-marquee var(--client-marquee-duration) linear infinite;
     animation-play-state: paused;
 }
@@ -67,15 +70,12 @@
 }
 
 .client-logo {
-    --logo-scale: 1;
-
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: var(--client-logo-w);
     height: var(--client-logo-h);
-    overflow: visible;
 }
 
 .client-logo img {
@@ -84,19 +84,40 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transform: scale(var(--logo-scale));
-    transform-origin: center center;
     filter: grayscale(100%);
     opacity: 0.72;
     transition: filter 0.35s ease, opacity 0.35s ease;
 }
 
-.client-logo--bitron { --logo-scale: 1.38; }
-.client-logo--btt { --logo-scale: 0.88; }
-.client-logo--higa { --logo-scale: 1.32; }
-.client-logo--imi { --logo-scale: 0.9; }
-.client-logo--kmex { --logo-scale: 2.05; }
-.client-logo--tenneco { --logo-scale: 1.72; }
+.client-logo--bitron {
+    width: 195px;
+    height: 54px;
+}
+
+.client-logo--btt {
+    width: 132px;
+    height: 66px;
+}
+
+.client-logo--higa {
+    width: 188px;
+    height: 52px;
+}
+
+.client-logo--imi {
+    width: 128px;
+    height: 66px;
+}
+
+.client-logo--kmex {
+    width: 72px;
+    height: 82px;
+}
+
+.client-logo--tenneco {
+    width: 205px;
+    height: 48px;
+}
 
 .client-logo:hover img {
     filter: grayscale(0%);
