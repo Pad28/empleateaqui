@@ -32,4 +32,21 @@
     );
 
     revealElements.forEach((el) => observer.observe(el));
+
+    const clientMarquees = document.querySelectorAll('.clients-marquee');
+    if (clientMarquees.length && !prefersReducedMotion) {
+        const marqueeObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-active');
+                    marqueeObserver.unobserve(entry.target);
+                });
+            },
+            { threshold: 0.2 }
+        );
+        clientMarquees.forEach((el) => marqueeObserver.observe(el));
+    } else if (clientMarquees.length) {
+        clientMarquees.forEach((el) => el.classList.add('is-active'));
+    }
 })();

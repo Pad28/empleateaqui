@@ -95,6 +95,24 @@ footer {
     flex-direction: column;
     gap: 12px;
     text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.footer-left-legals-block p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.footer-left-legals-block p i {
+    display: inline-block;
+    width: 18px;
+    margin-right: 8px;
+    color: var(--color-primary);
+    text-align: center;
 }
 
 .footer-left-legals-block .legal-link {
@@ -121,7 +139,7 @@ footer {
     color: var(--color-text);
     line-height: 1.5;
     max-width: 420px;
-    margin-top: 10px;
+    margin-top: 4px;
     text-decoration: none;
 }
 
@@ -138,33 +156,25 @@ footer {
 .footer-logo-box-right {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.logo-and-legals{
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
+    flex-direction: column;
     gap: 10px;
-}
-
-.logo-and-legals img {
-    width: 200px;
-}
-
-.legal-container{
-    text-align: right;
-}
-
-.legal-container p{
-    margin: 2px 0;
-    font-size: 0.85rem;
-    font-weight: 700;
+    flex-shrink: 0;
 }
 
 .footer-logo-box-right img {
     width: 190px;
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-logo-box-right p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: right;
+    line-height: 1.4;
 }
 
 .footer-bottom-closing-bar {
@@ -206,19 +216,16 @@ footer {
     object-fit: contain;
 }
 
-@media (min-width: 901px) {
-    footer {
-        position: relative;
+@media (max-width: 1024px) {
+    .footer-menu-horizontal-list {
+        flex-wrap: wrap;
+        gap: 20px 28px;
+        padding-left: 24px;
     }
+}
 
-    .footer-left-legals-block .footer-social-icons-row {
-        position: absolute;
-        right: 8%;
-        bottom: 40px;
-        margin-top: 0;
-    }
-
-    .footer-bottom-closing-bar {
-        justify-content: flex-start;
+@media (max-width: 900px) {
+    .footer-menu-horizontal-list {
+        padding-left: 0;
     }
 }

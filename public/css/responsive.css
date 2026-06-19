@@ -26,6 +26,13 @@
     .services-title-side h2 {
         font-size: 3rem;
     }
+
+    .clients-white-card {
+        --client-logo-w: 165px;
+        --client-logo-h: 66px;
+        padding: 48px 40px 40px;
+        margin-bottom: 60px;
+    }
 }
 
 /* ── Tablet portrait ── */
@@ -296,11 +303,18 @@
     }
 
     .clients-white-card {
-        padding: 20px 20px;
+        --client-logo-w: 148px;
+        --client-logo-h: 60px;
+        --client-logo-gap: 32px;
+        --client-marquee-duration: 28s;
+
+        padding: 24px 16px 28px;
         min-height: auto;
         border-radius: var(--radius-md);
         margin-bottom: 28px;
-        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
     }
 
     .clients-white-card h3 {
@@ -312,6 +326,31 @@
     .clients-white-card h3 br {
         display: none;
     }
+
+    .clients-marquee {
+        width: 100%;
+        mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 3%,
+            #000 97%,
+            transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            90deg,
+            transparent 0%,
+            #000 3%,
+            #000 97%,
+            transparent 100%
+        );
+    }
+
+    .client-logo--bitron { --logo-scale: 1.28; }
+    .client-logo--btt { --logo-scale: 0.9; }
+    .client-logo--higa { --logo-scale: 1.24; }
+    .client-logo--imi { --logo-scale: 0.92; }
+    .client-logo--kmex { --logo-scale: 1.7; }
+    .client-logo--tenneco { --logo-scale: 1.5; }
 
     .contact-wrap {
         flex-direction: column;
@@ -398,12 +437,12 @@
 
     footer {
         padding: 40px 6% 30px;
-        padding-bottom: max(30px, env(safe-area-inset-bottom));
+        padding-bottom: max(80px, calc(30px + env(safe-area-inset-bottom)));
     }
 
     .footer-top-row-grid {
         flex-direction: column;
-        gap: 20px;
+        gap: 24px;
         align-items: center;
     }
 
@@ -411,10 +450,15 @@
         border-right: none;
         padding-right: 0;
         align-items: center;
+        width: 100%;
     }
 
     .footer-redes-vertical-words-list {
         align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
     }
 
     .footer-menu-horizontal-list {
@@ -422,22 +466,37 @@
         gap: 14px;
         padding-left: 0;
         text-align: center;
+        width: 100%;
     }
 
     .footer-middle-content-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 28px;
+        gap: 32px;
+        padding-top: 20px;
     }
 
     .footer-left-legals-block {
         align-items: center;
         text-align: center;
+        width: 100%;
+    }
+
+    .footer-left-legals-block p {
+        font-size: 0.88rem;
+        word-break: break-word;
     }
 
     .footer-left-legals-block .footer-social-icons-row {
         justify-content: center;
-        margin: 12px 0 8px;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 8px 0 4px;
+    }
+
+    .footer-social-icons-row a {
+        width: 42px;
+        height: 42px;
     }
 
     .footer-address-block {
@@ -445,20 +504,34 @@
         text-align: center;
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
+        margin-top: 8px;
+    }
+
+    .footer-address-block span {
+        max-width: 320px;
     }
 
     .footer-logo-box-right {
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .footer-logo-box-right img {
-        width: 160px;
+        width: 150px;
+    }
+
+    .footer-logo-box-right p {
+        text-align: center;
+        font-size: 0.82rem;
     }
 
     .footer-bottom-closing-bar {
         flex-direction: column;
-        gap: 20px;
+        gap: 16px;
         text-align: center;
+        padding-top: 16px;
     }
 
     .whatsapp-float {
@@ -560,9 +633,26 @@
         padding: 28px 22px;
     }
 
-    .clients-white-card h3 {
-        font-size: 1.4rem;
+    .clients-white-card {
+        --client-logo-w: 128px;
+        --client-logo-h: 52px;
+        --client-logo-gap: 24px;
+        --client-marquee-duration: 24s;
+
+        padding: 20px 12px 24px;
+        margin-bottom: 24px;
     }
+
+    .clients-white-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .client-logo--bitron { --logo-scale: 1.22; }
+    .client-logo--btt { --logo-scale: 0.92; }
+    .client-logo--higa { --logo-scale: 1.18; }
+    .client-logo--imi { --logo-scale: 0.94; }
+    .client-logo--kmex { --logo-scale: 1.55; }
+    .client-logo--tenneco { --logo-scale: 1.38; }
 
     .contact-info-side h2 {
         font-size: 1.65rem;
@@ -574,7 +664,18 @@
     }
 
     .footer-slogan-text {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
+        line-height: 1.4;
+        max-width: 280px;
+    }
+
+    .footer-left-legals-block p {
+        font-size: 0.82rem;
+    }
+
+    .footer-social-icons-row a {
+        width: 38px;
+        height: 38px;
     }
 }
 
