@@ -1,7 +1,6 @@
 {
   "name": "hostinger-test-app",
-  "version": "1.0.0",
-  "description": "App sencilla para probar despliegue Node.js en Hostinger",
+  "version": "1.5.1",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

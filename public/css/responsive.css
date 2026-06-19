@@ -407,7 +407,7 @@
         position: relative;
         z-index: 3;
         isolation: isolate;
-        padding-bottom: 8px;
+        padding-bottom: 32px;
     }
 
     .avatar-box-ea {
@@ -417,9 +417,10 @@
         height: 380px;
         width: 100%;
         max-width: 400px;
-        margin: 24px auto 0;
+        margin: 40px auto 0;
         overflow: visible;
         pointer-events: none;
+        touch-action: none;
     }
 
     .avatar-box-ea__watermark {
