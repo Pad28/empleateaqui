@@ -83,6 +83,7 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     z-index: 4;
+    pointer-events: none;
 }
 
 .btn-liquid.bloom-active::after,
@@ -133,6 +134,8 @@
     box-shadow: 0 4px 15px rgba(90, 57, 250, 0.3);
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-submit-bloom span {

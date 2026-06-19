@@ -404,16 +404,22 @@
         order: 2;
         flex: none;
         width: 100%;
+        position: relative;
+        z-index: 3;
+        isolation: isolate;
+        padding-bottom: 8px;
     }
 
     .avatar-box-ea {
         order: 3;
         position: relative;
+        z-index: 1;
         height: 380px;
         width: 100%;
         max-width: 400px;
-        margin: 8px auto 0;
+        margin: 24px auto 0;
         overflow: visible;
+        pointer-events: none;
     }
 
     .avatar-box-ea__watermark {
@@ -462,6 +468,21 @@
         min-height: 48px;
         font-size: 0.95rem;
         margin-top: 8px;
+        position: relative;
+        z-index: 4;
+    }
+
+    .form-status {
+        position: relative;
+        z-index: 4;
+    }
+
+    .form-status--success {
+        color: #d4ffda;
+    }
+
+    .form-status--error {
+        color: #ffd4d4;
     }
 
     footer {
@@ -567,7 +588,8 @@
         width: 60px;
         height: 60px;
         bottom: max(20px, env(safe-area-inset-bottom, 20px));
-        left: max(20px, env(safe-area-inset-left, 20px));
+        left: auto;
+        right: max(20px, env(safe-area-inset-right, 20px));
     }
 }
 
