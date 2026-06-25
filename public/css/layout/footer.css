@@ -168,13 +168,23 @@ footer {
     height: auto;
 }
 
-.footer-logo-box-right p {
+.footer-logo-box-right p,
+.footer-logo-box-right .footer-legal-link {
     margin: 0;
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--color-text);
     text-align: right;
     line-height: 1.4;
+}
+
+.footer-logo-box-right .footer-legal-link {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-logo-box-right .footer-legal-link:hover {
+    color: var(--color-primary);
 }
 
 .footer-bottom-closing-bar {
